@@ -1,0 +1,366 @@
+/* Google Fonts loaded in HTML head */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Dosis', Arial, sans-serif;
+  background: #0a1633;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 48vh;
+  background: linear-gradient(120deg, #2a3cff 0%, #0a1633 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-content {
+  z-index: 2;
+  padding: 60px 20px 40px 20px;
+}
+.hero h1 {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #fff 70%, #4eaaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .tagline {
+  font-size: 1.3rem;
+  color: #b3c7f7;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Who We Are */
+.who-we-are {
+  background: rgba(10, 22, 51, 0.7);
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+.who-content {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  width: 90vw;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.who-text {
+  flex: 1.2;
+  min-width: 260px;
+}
+.who-text h2 {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  color: #4eaaff;
+}
+.who-text p {
+  font-size: 1.1rem;
+  color: #e3eaff;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+.who-img {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  justify-content: center;
+}
+.who-img img {
+  width: 320px;
+  max-width: 90vw;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #1a2a5a55;
+  object-fit: cover;
+}
+
+/* Mission & Vision */
+.mission-vision {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 36px;
+  padding: 60px 0 40px 0;
+  background: transparent;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.mv-card {
+  background: rgba(33,150,243,0.13);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #2196f322;
+  padding: 36px 28px;
+  min-width: 260px;
+  max-width: 400px;
+  flex: 1;
+  margin: 0 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.mv-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px #4eaaff55;
+}
+.mv-card h3 {
+  font-family: 'Dosis', Arial, sans-serif;
+  color: #4eaaff;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+.mv-card p {
+  color: #e3eaff;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+/* Timeline */
+.timeline {
+  padding: 60px 0 40px 0;
+  background: rgba(10, 22, 51, 0.7);
+  text-align: center;
+}
+.timeline h2 {
+  font-family: 'Dosis', Arial, sans-serif;
+  color: #4eaaff;
+  font-size: 2.2rem;
+  margin-bottom: 36px;
+}
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 120px;
+  max-width: 200px;
+}
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #4eaaff 60%, #2196f3 100%);
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px #4eaaff55;
+}
+.timeline-content {
+  background: rgba(33,150,243,0.13);
+  border-radius: 12px;
+  padding: 18px 12px;
+  box-shadow: 0 2px 12px #2196f322;
+  min-width: 100px;
+}
+.timeline-year {
+  font-family: 'Dosis', Arial, sans-serif;
+  color: #4eaaff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+.timeline-content p {
+  color: #e3eaff;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Meet the Team */
+.team {
+  padding: 60px 0 40px 0;
+  background: transparent;
+  text-align: center;
+}
+.team h2 {
+  font-family: 'Dosis', Arial, sans-serif;
+  color: #4eaaff;
+  font-size: 2.2rem;
+  margin-bottom: 36px;
+}
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.team-card {
+  background: rgba(33,150,243,0.13);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #2196f322;
+  padding: 32px 24px 24px 24px;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1;
+  margin: 0 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.team-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px #4eaaff55;
+  background: rgba(33,150,243,0.22);
+}
+.team-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px #2196f322;
+  border: 3px solid #4eaaff33;
+  transition: border 0.3s;
+}
+.team-card:hover img {
+  border: 3px solid #4eaaff;
+}
+.team-card h4 {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+.team-card p {
+  color: #e3eaff;
+  font-size: 1rem;
+  margin: 0;
+}
+.team-card span {
+  color: #4eaaff;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+/* Fun Facts */
+.fun-facts {
+  padding: 60px 0 40px 0;
+  background: rgba(10, 22, 51, 0.7);
+  text-align: center;
+}
+.fun-facts h2 {
+  font-family: 'Dosis', Arial, sans-serif;
+  color: #4eaaff;
+  font-size: 2.2rem;
+  margin-bottom: 36px;
+}
+.facts-counters {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.fact {
+  background: rgba(33,150,243,0.13);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #2196f322;
+  padding: 36px 28px;
+  min-width: 120px;
+  max-width: 180px;
+  flex: 1;
+  margin: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.counter {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  display: block;
+  transition: color 0.3s;
+}
+.fact p {
+  color: #b3c7f7;
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+/* CTA */
+.cta {
+  padding: 60px 0 80px 0;
+  background: transparent;
+  text-align: center;
+}
+.cta-btn {
+  background: linear-gradient(90deg, #2196f3 60%, #4eaaff 100%);
+  color: #fff;
+  border: none;
+  padding: 18px 48px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-family: 'Dosis', Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px #2196f355;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.cta-btn:hover, .cta-btn:focus {
+  background: linear-gradient(90deg, #1769aa 60%, #2196f3 100%);
+  box-shadow: 0 8px 24px #2196f355;
+  transform: translateY(-4px) scale(1.04);
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(.4,0,.2,1), transform 1s cubic-bezier(.4,0,.2,1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .who-content, .mission-vision, .timeline-container, .team-cards, .facts-counters {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .who-img img {
+    width: 90vw;
+    max-width: 350px;
+  }
+  .mv-card, .timeline-item, .team-card, .fact {
+    max-width: 95vw;
+  }
+}
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .who-text h2, .timeline h2, .team h2, .fun-facts h2 {
+    font-size: 1.4rem;
+  }
+  .mv-card, .fact, .team-card {
+    padding: 24px 10px;
+  }
+  .cta-btn {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+  .who-content {
+    gap: 18px;
+  }

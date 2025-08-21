@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOH Features | Machan Oru Help</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="App.css">
+  <style>
+    .features-header {
+      text-align: center;
+      padding: 48px 16px 24px 16px;
+    }
+    .features-header h1 {
+      font-family: 'Dosis', Arial, sans-serif;
+      font-size: 2.8rem;
+      margin: 0 0 12px 0;
+      background: linear-gradient(90deg, #fff 70%, #4eaaff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+    .features-header p {
+      color: #b3c7f7;
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 500;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 40px auto 60px auto;
+      padding: 0 16px;
+    }
+    .feature-card {
+      background: rgba(33,150,243,0.13);
+      border-radius: 18px;
+      box-shadow: 0 2px 16px #2196f322;
+      padding: 32px 28px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px #4eaaff55;
+      background: rgba(33,150,243,0.22);
+    }
+    .feature-name {
+      font-family: 'Dosis', Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #4eaaff;
+      font-weight: 700;
+      margin-bottom: 2px;
+      letter-spacing: 1px;
+    }
+    .feature-tagline {
+      font-size: 1.08rem;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      color: #e3eaff;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    @media (max-width: 700px) {
+      .features-header h1 {
+        font-size: 2rem;
+      }
+      .features-grid {
+        gap: 18px;
+      }
+      .feature-card {
+        padding: 20px 12px 18px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated particles canvas -->
+  <canvas id="particles-bg"></canvas>
+  <header class="features-header">
+    <h1>MOH Features</h1>
+    <p>Explore all the ways Machan Oru Help makes student life smarter, easier, and more fun!</p>
+  </header>
+  <main>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-name">Doubt Buster</div>
+        <div class="feature-tagline">Got a question? Get an answer—instantly!</div>
+        <div class="feature-desc">
+          Stuck on a tricky math problem or a confusing concept? Just ask MOH and get clear, step-by-step solutions in seconds. No more waiting for replies in group chats—your personal study buddy is always on standby!
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Study Scheduler</div>
+        <div class="feature-tagline">Your perfect timetable, made in seconds.</div>
+        <div class="feature-desc">
+          Say goodbye to messy planners and last-minute cramming. MOH creates a personalized study timetable based on your syllabus, deadlines, and free time. Stay organized, stress less, and ace those exams with a plan that actually fits your life.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Scholarship Scout</div>
+        <div class="feature-tagline">Never miss a local scholarship again!</div>
+        <div class="feature-desc">
+          MOH keeps an eye out for scholarships and grants in your area, sending you timely alerts tailored to your profile. Apply with confidence and boost your chances of funding your dreams—no more FOMO on free money!
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Career Compass</div>
+        <div class="feature-tagline">Find your path, step by step.</div>
+        <div class="feature-desc">
+          Not sure what’s next after school or college? MOH maps out personalized career roadmaps, showing you courses, skills, and milestones for your dream job. Navigate your future with clarity and confidence.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Mind Check</div>
+        <div class="feature-tagline">Because your mental health matters.</div>
+        <div class="feature-desc">
+          MOH checks in with you regularly, offering quick mood check-ins and resources for stress, anxiety, or just a rough day. Get tips, support, and a friendly nudge to take care of yourself—because you’re more than just your grades.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Mojo Boost</div>
+        <div class="feature-tagline">Motivation, delivered daily.</div>
+        <div class="feature-desc">
+          Need a pep talk before that big test? MOH sends you motivational quotes, reminders, and positive vibes to keep your spirits high. Stay inspired and keep moving forward—even on Mondays!
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Event Explorer</div>
+        <div class="feature-tagline">Discover what’s happening around you.</div>
+        <div class="feature-desc">
+          From workshops to hackathons, MOH finds local events and learning opportunities tailored to your interests. Meet new people, learn new skills, and never miss out on what’s happening in your student community.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Quiz Master</div>
+        <div class="feature-tagline">Prep smarter, not harder.</div>
+        <div class="feature-desc">
+          Practice makes perfect! MOH offers quick, interactive quizzes based on your syllabus to help you prep for exams. Track your progress, spot weak areas, and turn revision into a game.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Language Buddy</div>
+        <div class="feature-tagline">Translate, understand, communicate—anytime.</div>
+        <div class="feature-desc">
+          MOH helps you break language barriers with instant translation and explanation of tricky terms. Whether it’s homework or chatting with friends, you’ll never get lost in translation again.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Opportunity Radar</div>
+        <div class="feature-tagline">Be the first to know about internships and jobs.</div>
+        <div class="feature-desc">
+          MOH scans the web for internships and job openings that match your skills and interests. Get alerts, tips, and application deadlines—land your dream role before anyone else!
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">News Flash</div>
+        <div class="feature-tagline">Stay updated, stay ahead.</div>
+        <div class="feature-desc">
+          MOH delivers daily news, campus updates, and trending topics straight to your dashboard. Stay informed without doomscrolling—just the stuff that matters to students.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Chill Zone</div>
+        <div class="feature-tagline">Study hard, play harder!</div>
+        <div class="feature-desc">
+          All work and no play? Not here! MOH serves up fun facts, jokes, and quick games to give your brain a break. Recharge, laugh, and return to your books refreshed.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Study Circle</div>
+        <div class="feature-tagline">Find your study squad, anytime.</div>
+        <div class="feature-desc">
+          MOH connects you with peers for group studies, discussions, and project collaborations. Share notes, solve doubts together, and make learning a team sport.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Money Minder</div>
+        <div class="feature-tagline">Budgeting made easy (and painless).</div>
+        <div class="feature-desc">
+          Track your expenses, set savings goals, and get smart tips for student life on a budget. MOH helps you manage your money so you can focus on what matters—like pizza and textbooks.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-name">Project Genie</div>
+        <div class="feature-tagline">Stuck on a project? MOH’s got ideas!</div>
+        <div class="feature-desc">
+          Get AI-powered project suggestions, research guidance, and step-by-step help for your assignments. Impress your teachers and classmates with creative, well-executed projects—without the stress.
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    // --- Particle Animation (copied from index.html) ---
+    const canvas = document.getElementById('particles-bg');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const colors = ['#4eaaff', '#2196f3', '#fff', '#b3c7f7'];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function Particle() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 2.5 + 1;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.speedX = (Math.random() - 0.5) * 0.6;
+        this.speedY = (Math.random() - 0.5) * 0.6;
+        this.alpha = Math.random() * 0.5 + 0.3;
+    }
+    Particle.prototype.draw = function() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.restore();
+    };
+    Particle.prototype.update = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    };
+
+    function initParticles() {
+        particlesArray = [];
+        let num = Math.floor(window.innerWidth / 10);
+        for (let i = 0; i < num; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let p of particlesArray) {
+            p.update();
+            p.draw();
+        }
+        requestAnimationFrame(animateParticles);
+    }
+    initParticles();
+    animateParticles();
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initParticles();
+    });
+  </script>
+</body>
+</html>

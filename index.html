@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOH | Coming Soon</title>
+    <!-- Google Fonts: Dosis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="App.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="landing-bg">
+        <!-- Animated particles canvas -->
+        <canvas id="particles-bg"></canvas>
+        <nav class="navbar fade-in">
+            <div class="logo">MOH</div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Other service</a></li>
+            </ul>
+        </nav>
+        <main class="main-content fade-in">
+            <section class="left">
+                <h1>Coming Soon</h1>
+                <p>We’re working hard to launch something amazing.<br>
+                Stay tuned for updates!</p>
+                <!-- Countdown Timer -->
+                <div class="countdown" id="countdown">
+                    <div><span id="days">00</span><small>Days</small></div>
+                    <div><span id="hours">00</span><small>Hours</small></div>
+                    <div><span id="minutes">00</span><small>Minutes</small></div>
+                    <div><span id="seconds">00</span><small>Seconds</small></div>
+                </div>
+                <!-- Email Subscription Box -->
+                <form class="subscribe-box" id="subscribe-form" autocomplete="off">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Notify Me</button>
+                </form>
+                <div id="subscribe-message"></div>
+            </section>
+            <section class="right">
+                <div class="illustration-card fade-in">
+                    <div class="circle"></div>
+                    <div class="rect"></div>
+                    <div class="small-rect"></div>
+                    <div class="person"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div class="auth-modal">
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="">
+                <div class ="input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class='bx  bxs-envelope-open'  ></i> 
+                </div>
+                <div class ="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx  bxs-lock'  ></i> 
+                </div>
+                <botton type="submit" name="login_btn" class="btn">Login</button>
+                    <p class="register">Don't have an account? <a href="#" class="toggle">Register</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+    // --- Particle Animation ---
+    const canvas = document.getElementById('particles-bg');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const colors = ['#4eaaff', '#2196f3', '#fff', '#b3c7f7'];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function Particle() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 2.5 + 1;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.speedX = (Math.random() - 0.5) * 0.6;
+        this.speedY = (Math.random() - 0.5) * 0.6;
+        this.alpha = Math.random() * 0.5 + 0.3;
+    }
+    Particle.prototype.draw = function() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.restore();
+    };
+    Particle.prototype.update = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    };
+
+    function initParticles() {
+        particlesArray = [];
+        let num = Math.floor(window.innerWidth / 10);
+        for (let i = 0; i < num; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let p of particlesArray) {
+            p.update();
+            p.draw();
+        }
+        requestAnimationFrame(animateParticles);
+    }
+    initParticles();
+    animateParticles();
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initParticles();
+    });
+
+    // --- Countdown Timer ---
+    // Set your launch date here (YYYY-MM-DDTHH:MM:SS)
+    const launchDate = new Date('2025-12-31T00:00:00');
+    function updateCountdown() {
+        const now = new Date();
+        const diff = launchDate - now;
+        if (diff <= 0) {
+            document.getElementById('countdown').innerHTML = "<span class='launched'>We're Live!</span>";
+            return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // --- Email Subscription (demo only) ---
+    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        // Demo: just show a message
+        document.getElementById('subscribe-message').textContent = "Thank you! You'll be notified.";
+        document.getElementById('subscribe-message').style.color = "#4eaaff";
+        this.reset();
+    });
+
+    // --- Fade-in Animation ---
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.add('visible');
+        });
+    });
+    </script>
+</body>
+</html>
